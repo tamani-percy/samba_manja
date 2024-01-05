@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNZA Samba Manja</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/images/UNZA logo.png" />
+  </head>
+  <body>
+    <div class="sambamanja">
+      <div class="sambamanja-card-left"></div>
+      <div class="sambamanja-card-right">
+        <div class="unza-logo">
+          <div><img class="logo" src="/images/UNZA logo.png" alt="" /></div>
+          <h1>
+            <span class="green">U</span>
+            <span class="red">N</span>
+            <span class="orange">Z</span>
+            <span class="black">A</span> <br />
+            SAMBA MANJA
+          </h1>
+        </div>
+
+        <div>
+          <form
+            class="form-signup"
+            role="form"
+            method="post"
+            action="/signup"
+            onSubmit="return checkblank(this);"
+          >
+            <div class="names">
+              <input
+                type="text"
+                class="form-control"
+                name="first_name"
+                placeholder="Enter First Name"
+              />
+              <input
+                type="text"
+                class="form-control"
+                name="last_name"
+                placeholder="Enter Last Name"
+              />
+            </div>
+
+            <input
+              type="number"
+              class="form-control"
+              name="mob_no"
+              placeholder="Enter Mobile Number"
+            />
+            <input
+              type="text"
+              class="form-control"
+              name="user_name"
+              placeholder="Enter a Username"
+            />
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              placeholder="Enter a Password"
+            />
+            <div class="form-group">
+              <% if (message.length > 0) { %>
+              <div class="alert-success col-sm-12"><%= message %></div>
+              <% } %>
+              <button id="btn-signup" type="submit" class="button-cta2">
+                <i class="icon-hand-right"></i> &nbsp Sign Up
+              </button>
+            </div>
+            <div class="signup-div">
+              <p class="signup-a">Created your account?</p>
+              <a class="signup" href="/login">Log in</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

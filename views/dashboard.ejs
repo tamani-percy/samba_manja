@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="icon" href="/images/UNZA logo.png">
+    <title>UNZA Samba Manja</title>
+  </head>
+  
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="logo-name">
+        <div class="logo-image">
+          <img src="/Admin Dashboard Panel/" alt="" />
+        </div>
+        <span class="logo_name"
+          >UNZA <br />
+          Samba Manja</span
+        >
+      </div>
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <a href="/home/dashboard">
+              <i class="uil uil-estate"></i>
+              <span class="link-name">Home</span>
+            </a>
+          </li>
+        
+          <li>
+            <a href="/recents">
+              <i class="uil uil-analytics"></i>
+              <span class="link-name">Recents</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://192.168.8.100:3000">
+              <i class="uil uil-mobile-android"></i>
+              <span class="link-name">Remote</span>
+            </a>
+          </li>
+         
+          <li>
+            <a href="/export">
+              <i class="uil uil-file-export"></i>
+              <span class="link-name">Export</span>
+            </a>
+          </li>
+          <li>
+            <a href="/home/logout">
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Logout</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="logout-mode">
+          <li class="mode">
+            <a href="#">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a>
+
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Dashboard -->
+    <section class="dashboard">
+      <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+      </div>
+
+      <div class="dash-content">
+        <div class="overview">
+          <div class="title">
+            <i class="uil uil-tachometer-fast-alt">Dashboard</i>
+          </div>
+          <div id="showtime"></div>
+          <h3><%=data[0].first_name%>, <%=data[0].last_name%> <br> <br> What would you like to do today? :-)</h3>
+          <div class="todotoday">
+            <div>
+              <a href="/recents">Take a gander at your recent entries??</a>
+            </div>
+            <div>
+              <a href="/export">Export recent entries as PDF/CSV??</a>
+            </div>
+            <div>
+              <a href="http://192.168.103.31:3000">Control some GPIO?</a>
+            </div>
+            <div>
+              <a href="/home/logout">Log Out??</a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+        var myDate = new Date();
+    var hrs = myDate.getHours();
+
+    var greet;
+
+    if (hrs < 12)
+        greet = 'Good Morning';
+    else if (hrs >= 12 && hrs <= 17)
+        greet = 'Good Afternoon';
+    else if (hrs >= 17 && hrs <= 24)
+        greet = 'Good Evening';
+
+    document.getElementById('showtime').innerHTML =
+        "<h1>" + greet + "</h1>";
+    </script>
+    <script src="/js/main.js"></script>
+    <script src="https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js"/>
+  </body>
+</html>

@@ -1,0 +1,284 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNZA Samba Manja</title>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/charts.css" />
+    <link rel="stylesheet" href="/css/recents-main.css" />
+    <link rel="icon" href="/images/UNZA logo.png" />
+  </head>
+  <body onload="loadData()">
+    <nav>
+      <div class="logo-name">
+        <div class="logo-image"></div>
+        <span class="logo_name"
+          >UNZA <br />
+          Samba Manja</span
+        >
+      </div>
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <a href="/home/dashboard">
+              <i class="uil uil-estate"></i>
+              <span class="link-name">Home</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/recents">
+              <i class="uil uil-analytics"></i>
+              <span class="link-name">Recents</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://192.168.8.100:3000">
+              <i class="uil uil-mobile-android"></i>
+              <span class="link-name">Remote</span>
+            </a>
+          </li>
+          <li>
+            <a href="/export">
+              <i class="uil uil-file-export"></i>
+              <span class="link-name">Export</span>
+            </a>
+          </li>
+          <li>
+            <a href="/home/logout">
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Logout</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="logout-mode">
+          <li class="mode">
+            <a href="#">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a>
+
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section class="dashboard">
+      <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+      </div>
+      <div class="title">
+        <i class="uil uil-comparison">Recents</i>
+        <button class="reload-btn" onclick="location.reload()">
+          <img
+            class="reload-icon"
+            src="https://htmlacademy.ru/assets/icons/reload-6x-white.png"
+          />Reload
+        </button>
+      </div>
+      <div class="boxes">
+        <div class="box-wrapper">
+          <div class="box1">
+            <i class="uil uil-hourglass"></i>
+            <h1 class="daily-h1">Daily Entries</h1>
+            <div class="box-title">
+              <h1>Day This Month</h1>
+              <h1>Entries</h1>
+            </div>
+            <div>
+              <% if(userData2.length!=0){ var i=1;
+              userData2.forEach(function(data){ %>
+
+              <p><%=data.day %></p>
+
+              <p><%=data.number_of_users %></p>
+              <% i++; }) %> <% } else{ %>
+              <tr>
+                <td colspan="7">No Data Found</td>
+              </tr>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="box2">
+            <i class="uil uil-calender"></i>
+            <h1 class="daily-h1">Week This Year</h1>
+            <div class="box-title">
+              <h1>Weeks Overall</h1>
+              <h1>Entries</h1>
+            </div>
+            <div class="panel">
+              <% if(userData4.length!=0){ var i=1;
+              userData4.forEach(function(data4){ %>
+
+              <p><%=data4.week %></p>
+              <p><%=data4.number_of_users %></p>
+              <% i++; }) %> <% } else{ %>
+              <tr>
+                <td colspan="7">No Data Found</td>
+              </tr>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="box3">
+            <i class="uil uil-clock"></i>
+            <h1 class="daily-h1">Monthly Entries</h1>
+            <div class="box-title">
+              <h1>Month this Year</h1>
+              <h1>Entries</h1>
+            </div>
+            <div>
+              <% if(userData3.length!=0){ var i=1;
+              userData3.forEach(function(data3){ %>
+
+              <p><%=data3.day %></p>
+              <p><%=data3.number_of_users %></p>
+              <% i++; }) %> <% } else{ %>
+              <tr>
+                <td colspan="7">No Data Found</td>
+              </tr>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <div class="activity">
+          <div class="table-container">
+            <a href="/export">Export all entries to CSV</a>
+            <div>
+              <table class="usertable">
+                <thead>
+                  <th>
+                    <i class="uil uil-user"
+                      ><br />
+                      User</i
+                    >
+                  </th>
+                </thead>
+                <tr>
+                  <td id="bucket-data-list"><div></div></td>
+                </tr>
+              </table>
+              <table class="ana-table" style="border-collapse: collapse">
+                <thead>
+                  <th>
+                    <i class="uil uil-water"
+                      ><br />
+                      Sanitiser Type</i
+                    >
+                  </th>
+                  <th>
+                    <i class="uil uil-thermometer"
+                      ><br />
+                      Temperature (℃)</i
+                    >
+                  </th>
+                  <th>
+                    <i class="uil uil-watch"
+                      ><br />
+                      Timestamp</i
+                    >
+                  </th>
+                </thead>
+                <% if(userData.length!=0){ var i=1;
+                userData.forEach(function(data){ %>
+                <tr>
+                  <td><%=data.sanitiser %></td>
+                  <td><%=data.temp %> ℃</td>
+                  <td><%=data.time %></td>
+                </tr>
+                <% i++; }) %> <% } else{ %>
+                <tr>
+                  <td colspan="7">No Data Found</td>
+                </tr>
+                <% } %>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </section>
+    <script>
+      let list = [];
+      function saveFile(event) {
+        const xhr = new XMLHttpRequest();
+        const formData = new FormData();
+        const file = event.files[0];
+        formData.append("s3-file", file);
+
+        xhr.onreadystatechange = (state) => {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+          }
+        };
+
+        xhr.timeout = 5000;
+        xhr.open("POST", "/upload-to-s3");
+        xhr.send(formData);
+      }
+
+      function loadData() {
+        getBucketObjectList();
+      }
+
+      function getBucketObjectList() {
+        getData("/all-files", (data = []) => {
+          data = JSON.parse(data);
+          list = data;
+          const objectList = data.map((item, index) => {
+            return `
+            <a class="card" onclick="downloadFile(${index})">
+              View User</a> `;
+          });
+          document.getElementById("bucket-data-list").innerHTML = objectList;
+        });
+      }
+      function downloadFile(index) {
+        const fileName = (list[index] || {}).key;
+        getData(`/get-object-url/${fileName}`, (url) => {
+          window.open(
+            url,
+            "_blank",
+            "toolbar=yes,resizable=yes,top=500,left=500,width=400,height=400"
+          );
+        });
+      }
+
+      function getData(url, cb) {
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = (state) => {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            cb(xhr.responseText);
+          }
+        };
+        xhr.timeout = 10000;
+        xhr.open("GET", url);
+        xhr.send();
+      }
+    </script>
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

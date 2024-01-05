@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNZA Samba Manja</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/export.css" />
+    <link rel="icon" href="/images/UNZA logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="logo-name">
+        <div class="logo-image">
+          <img src="/Admin Dashboard Panel/" alt="" />
+        </div>
+        <span class="logo_name"
+          >UNZA <br />
+          Samba Manja</span
+        >
+      </div>
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <a href="/home/dashboard">
+              <i class="uil uil-estate"></i>
+              <span class="link-name">Home</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/recents">
+              <i class="uil uil-analytics"></i>
+              <span class="link-name">Recents</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://192.168.8.100:3000">
+              <i class="uil uil-mobile-android"></i>
+              <span class="link-name">Remote</span>
+            </a>
+          </li>
+          <li>
+            <a href="/export">
+              <i class="uil uil-file-export"></i>
+              <span class="link-name">Export</span>
+            </a>
+          </li>
+          <li>
+            <a href="/home/logout">
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Logout</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="logout-mode">
+          <li class="mode">
+            <a href="#">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a>
+
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Dashboard -->
+    <section class="dashboard">
+      <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+      </div>
+      <div class="export">
+        <div class="wrapper">
+          <div class="sanitiser-csv">
+            <div>
+              <h1>Sanitiser</h1>
+              <p>User rate according to the type of sanitiser utilised</p>
+            </div>
+            <div>
+              <h2>Month</h2>
+              <a class="export-btn" href="/export/csv/sanitiser-month"
+                >Export monthly entries</a
+              >
+            </div>
+            <div>
+              <h2>Week</h2>
+              <a class="export-btn" href="/export/csv/sanitiser-week"
+                >Export weekly entries</a
+              >
+            </div>
+            <div>
+              <h2>Year</h2>
+              <a class="export-btn" href="/export/csv/sanitiser-day"
+                >Export daily entries</a
+              >
+            </div>
+          </div>
+          <div class="user-csv">
+            <div>
+              <h1>User</h1>
+              <p>User rate according to predetermined intervals</p>
+            </div>
+            <div>
+              <h2>Month</h2>
+              <a class="export-btn" href="/export/csv/user-month"
+                >Export monthly entries</a
+              >
+            </div>
+            <div>
+              <h2>Week</h2>
+              <a class="export-btn" href="/export/csv/user-week"
+                >Export weekly entries</a
+              >
+            </div>
+            <div>
+              <h2>Year</h2>
+              <a class="export-btn" href="/export/csv/user-day"
+                >Export daily entries</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="/js/main.js"></script>
+  </body>
+</html>
