@@ -9,60 +9,58 @@
     <link rel="icon" href="/images/UNZA logo.png">
 </head>
 <body>
-    <div class="sambamanja">
-        <div class="sambamanja-card-left"></div>
-        <div class="sambamanja-card-right">
-          <div class="unza-logo">
+<div class="sambamanja">
+    <div class="sambamanja-card-left"></div>
+    <div class="sambamanja-card-right">
+        <div class="unza-logo">
             <div>
-              <img class="logo" src="/images/UNZA logo.png" alt="" />
+                <img class="logo" src="/images/UNZA logo.png" alt=""/>
             </div>
             <h1>
-              <span class="green">U</span>
-              <span class="red">N</span>
-              <span class="orange">Z</span>
-              <span class="black">A</span> <br />
-              SAMBA MANJA
+                <span class="green">U</span>
+                <span class="red">N</span>
+                <span class="orange">Z</span>
+                <span class="black">A</span> <br/>
+                SAMBA MANJA
             </h1>
-          </div>
-          <div>
+        </div>
+        <div>
             <form
-              id="loginform"
-              role="form"
-              method="post"
-              action="/login"
+                    id="loginform"
+                    role="form"
+                    method="post"
+                    action="/login"
             >
                 <input
-                  id="login-username"
-                  type="text"
-                  class="form-control"
-                  name="user_name"
-                  value=""
-                  placeholder="Enter Username"
+                        id="login-username"
+                        type="text"
+                        class="form-control"
+                        name="user_name"
+                        value=""
+                        placeholder="Enter Username"
                 />
                 <input
-                  id="login-password"
-                  type="password"
-                  class="form-control"
-                  name="password"
-                  placeholder="Enter Password"
+                        id="login-password"
+                        type="password"
+                        class="form-control"
+                        name="password"
+                        placeholder="Enter Password"
                 />
                 <div>
-                  <% if (message.length > 0) { %>
-                    <div class="alert-danger"><%= message %></div>
-        <% } %>
-                  <button id="btn-login" type="submit" class="button-cta">
-                    Login
-                  </button>
+                    <% if (message.length > 0) { %>
+                        <div class="alert-danger"><%= message %></div>
+                    <% } %>
+                    <button id="btn-login" type="submit" class="button-cta">
+                        Login
+                    </button>
                 </div>
-                  <div class="signup-div">
-                    <p class="signup-a">New to Samba Manja?</p> 
+                <div class="signup-div">
+                    <p class="signup-a">New to Samba Manja?</p>
                     <a class="signup" href="/signup"> Sign Up</a>
-                  </div>
                 </div>
-              </div>
             </form>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
 </body>
 </html>
